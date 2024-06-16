@@ -1,6 +1,6 @@
 https://www.baeldung.com/spring-state-machine
 
-Fork
+Fork:
 Sometimes it becomes necessary to split the execution into multiple independent execution paths. This can be achieved using the fork functionality.
 
 First, we need to designate a node as a fork node and create hierarchical regions into which the state machine will perform the split:
@@ -27,7 +27,7 @@ Then define fork transition:
 .target("Sub1-1")
 .target("Sub2-1");
 
-Join
+Join:
 The complement of the fork operation is the join. It allows us to set a state transitioning to which is dependent on completing some other states:
 
 As with forking, we need to designate a join node in the state definition:
@@ -64,7 +64,7 @@ builder.configureTransitions()
 
 StateMachine<String, String> machine = builder.build();
 
-Hierarchical States
+Hierarchical States:
 Hierarchical states can be configured by using multiple withStates() in conjunction with parent():
 
 states
@@ -85,7 +85,7 @@ stateMachine.getState().getIds()
 ["SI", "SUB1"]
 
 
-Junctions (Choices)
+Junctions (Choices):
 So far, we’ve created state transitions which were linear by nature. Not only is this rather uninteresting, but it also does not reflect real-life use-cases that a developer will be asked to implement either. The odds are conditional paths will need to be implemented, and Spring state machine’s junctions (or choices) allow us to do just that.
 
 First, we need to mark a state a junction (choice) in the state definition:
